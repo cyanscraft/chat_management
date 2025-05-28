@@ -1,0 +1,121 @@
+{
+  "badges": [
+    {
+      "id": 1,
+      "name": "방장",
+      "icon": [30, 90, 64,67],
+      "condition": {
+        "type": "role",
+        "value": "owner"
+      }
+    },
+    {
+      "id": 2,
+      "name": "부방장",
+      "icon": [100, 90, 65,67],
+      "condition": {
+        "type": "role",
+        "value": "sub_owner"
+      }
+    },
+    {
+      "id": 3,
+      "name": "크리스마스",
+      "icon": [176,84,67,79],
+      "condition": {
+        "type": "date",
+        "value": "12-25"
+      }
+    },
+    {
+      "id": 4,
+      "name": "할로윈",
+      "icon": [258,90,67,67],
+      "condition": {
+        "type": "date",
+        "value": "10-31"
+      }
+    },
+    {
+      "id": 5,
+      "name": "부엉이",
+      "icon": [30,169,64,73],
+      "condition": {
+        "type": "time",
+        "value": "02:00-05:00"
+      }
+    },
+    {
+      "id": 6,
+      "name": "번개",
+      "icon": [116,169,48,73],
+      "condition": {
+        "type": "rank",
+        "value": "1"
+      }
+    },
+    {
+      "id": 10,
+      "name": "로켓",
+      "icon": [253,169,61,73],
+      "condition": {
+        "type": "date",
+        "value": "05-28"
+      }
+    },
+    {
+      "id": 11,
+      "name": "일반 방패",
+      "icon": [30,252,64,67],
+      "condition": {
+        "type": "streak_days",
+        "value": 7
+      }
+    },
+    {
+      "id": 12,
+      "name": "금 방패",
+      "icon": [100,252,65,67],
+      "condition": {
+        "type": "streak_days",
+        "value": 30
+      }
+    },
+    {
+      "id": 13,
+      "name": "얼리버드",
+      "icon": [171,252,72,72],
+      "condition": {
+        "type": "time",
+        "value": "05:00-07:00"
+      }
+    },
+    {
+      "id": 14,
+      "name": "불꽃",
+      "icon": [258,252,56,72],
+      "condition": {
+        "type": "checkin_attempts",
+        "value": 5
+      }
+    },
+    {
+      "id": 15,
+      "name": "해돋이",
+      "icon": [30,334,64,73],
+      "condition": {
+        "type": "date",
+        "value": "01-01"
+      }
+    },
+    {
+      "id": 16,
+      "name": "수다쟁이",
+      "icon": [100,340,65,61],
+      "condition": {
+        "type": "chat_count",
+        "value": 100
+      }
+    }
+  ]
+}
