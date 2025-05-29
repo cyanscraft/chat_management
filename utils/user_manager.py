@@ -87,7 +87,7 @@ def handle_attendance(user_id: str, name: str):
             WHERE user_id = %s
         """, (user_id,))
         ranks = cursor.fetchone()
-
+        print(ranks)
         cursor.close()
         conn.close()
         return {
@@ -96,8 +96,8 @@ def handle_attendance(user_id: str, name: str):
             "stream_count": 1,
             "last_attend_date": today,
             "date": today,
-            "attend_rank": ranks["attend_rank"] or "None",
-            "exp_rank":    ranks["exp_rank"] or "None",
+            "attend_rank": ranks["attend_rank"],
+            "exp_rank":    ranks["exp_rank"],
             "about":       "",
             "exp":         100,
             "chat_count":  0
