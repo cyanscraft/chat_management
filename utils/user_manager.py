@@ -127,6 +127,7 @@ def handle_attendance(user_id: str, name: str):
             WHERE user_id = %s
         """, (user_id,))
         ranks = cursor.fetchone()
+        print(user)
         print(ranks)
         print(user_id)
         cursor.close()
