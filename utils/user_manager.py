@@ -128,6 +128,7 @@ def handle_attendance(user_id: str, name: str):
         """, (user_id,))
         ranks = cursor.fetchone()
         print(ranks)
+        print(user_id)
         cursor.close()
         conn.close()
         return {
