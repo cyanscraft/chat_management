@@ -7,7 +7,10 @@ from command.commands import ICommand
 from command.commands.AttendanceCommand import AttendanceCommand
 from command.commands.CardCommand import CardCommand
 from command.commands.ChangeBackgroundCommand import ChangeBackgroundCommand
+from command.commands.KermitCommand import KermitCommand
 from command.commands.StatusMsgCommand import StatusMsgCommand
+from command.commands.WeatherCommand import WeatherCommand
+from command.commands.WhoisCommand import WhoisCommand
 from command.commands.notification_command import NotificationCommand
 from database import notification
 
@@ -21,6 +24,9 @@ class CommandManager:
         self.add_command(StatusMsgCommand())
         self.add_command(NotificationCommand())
         self.add_command(ChangeBackgroundCommand())
+        self.add_command(WhoisCommand())
+        self.add_command(WeatherCommand())
+        self.add_command(KermitCommand())
 
     def add_command(self, command: ICommand):
         self.exact_commands[command.invoke] = command

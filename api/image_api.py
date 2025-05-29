@@ -10,7 +10,6 @@ from card_maker.exp_level_img import exp_level_generator
 from card_maker.profile_img import profile_img_generator
 from users.user import get_open_chat_member
 from utils.badge import get_badges
-from utils.level import get_level_info
 from utils.pil_util import draw_wrapped_text, load_image_from_url, add_rounded_corners, resize_cover
 from utils.user_manager import get_or_create
 
@@ -32,7 +31,7 @@ with open(badge_path, "r", encoding="utf-8") as f:
 sprite_sheet = Image.open(badge_sheet_path).convert("RGBA")
 badge_dict = {b["id"]: b for b in badge_data}
 
-def generate_image(userid, name, bot_url) -> bytes:
+def generate_image(userid, name, bot_url):
     chat_member = get_open_chat_member(userid, bot_url)
     profile_img = chat_member["profile_image_url"]
     user_type = chat_member["link_member_type"]
@@ -122,8 +121,7 @@ def generate_image(userid, name, bot_url) -> bytes:
         background.paste(cropped_icon, (paste_x, 450+paste_y), cropped_icon)  # 알파 채널 유지
 
     #==========
-    buffer = io.BytesIO()
-    background.save(buffer, format="PNG")
-    buffer.seek(0)
-    return buffer.read()
-
+    buf = io.BytesIO()
+    background.save(buf, format="PNG")
+    buf.seek(0)
+    return buf
