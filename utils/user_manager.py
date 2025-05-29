@@ -96,8 +96,8 @@ def handle_attendance(user_id: str, name: str):
             "stream_count": 1,
             "last_attend_date": today,
             "date": today,
-            "attend_rank": ranks["attend_rank"],
-            "exp_rank":    ranks["exp_rank"],
+            "attend_rank": ranks["attend_rank"] or "None",
+            "exp_rank":    ranks["exp_rank"] or "None",
             "about":       "",
             "exp":         100,
             "chat_count":  0

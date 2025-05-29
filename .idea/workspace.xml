@@ -5,56 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06bd7f6d-22d6-4cb5-b6e7-4c101f69679b" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PythonProject1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/google_lens/google_lens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/188354d5-63b0-4906-81da-914607ffe2c1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/1e429f69-0c0d-4e84-ba20-0201cdd957f6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/26e535e7-1b41-452a-97bd-79bac84cc524.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/2b07f4fa-6de7-4de7-b6d6-6a552841d492.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/3c357170-3792-4d56-9c1f-017c395c035b.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/54236dfc-42c5-412d-90a9-2ec1b28295a6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/76c29515-39f3-41fc-a6d8-eed5dd514f8c.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/80eb392e-1037-41b7-a5be-91e4b1aa17eb.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/907c1376-db7d-4442-b70c-03610342be97.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/93f28492-6e76-417f-b825-564e916c4d20.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Balling Kermit.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermie!!!!!! .jpeg" afterPathEscaped="$PROJECT_DIR$/assets/kermit/Kermie!!!!!! 🤗😱🤯😭😏🥹😄.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit Stripper GIF - Kermit Stripper Kms - Discover &amp; Share GIFs (1).gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit Stripper GIF - Kermit Stripper Kms - Discover &amp; Share GIFs.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit meme.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit the Frog.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit the Frog✨.jpeg" afterPathEscaped="$PROJECT_DIR$/assets/kermit/Kermit the Frog💚✨.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit.jpeg" afterPathEscaped="$PROJECT_DIR$/assets/kermit/Kermit🥰🍐.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/X.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/a63b0d83-455f-439b-a8a2-9b978e3e1027.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/c3180e4f-4cb9-453c-840f-b9d28abd1612.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/d250513d-107f-41b2-a152-749b365af01d.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/d5a3efa7-594d-4694-abb0-86d2e30a7c3b.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/d6b74042-a524-456b-b705-cf56128b3277.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/d7d8673c-48e2-4850-8ba7-12e1c77954c5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/eb583bd8-7167-4d32-886c-6a766fcd1c5f.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/fa4e8412-777a-4706-9693-481690309fb8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/frog.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/lolly_leslie.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/짐승.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/  ៸៸.jpeg" afterPathEscaped="$PROJECT_DIR$/assets/kermit/𝐊𝐄𝐑𝐌𝐈𝐓 🌱 ៸៸𓂃.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/kermit/Kermit.jpeg" afterPathEscaped="$PROJECT_DIR$/assets/kermit/💚💚💚Kermit.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/command/commands/KermitCommand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/command/commands/WeatherCommand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/command/commands/WhoisCommand.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/badge.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/image_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/image_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/server.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_maker/background_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/google_lens/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card_maker/badge_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/google_lens/user_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/command/CommandManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/command/CommandManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/command/commands/AttendanceCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/command/commands/AttendanceCommand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/command/commands/CardCommand.py" beforeDir="false" afterPath="$PROJECT_DIR$/command/commands/CardCommand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iris.db" beforeDir="false" afterPath="$PROJECT_DIR$/iris.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/pil_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pil_util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +124,7 @@
       <workItem from="1748323501295" duration="23487000" />
       <workItem from="1748387526990" duration="16355000" />
       <workItem from="1748410680537" duration="5845000" />
-      <workItem from="1748510083302" duration="3123000" />
+      <workItem from="1748510083302" duration="4383000" />
     </task>
     <servers />
   </component>
@@ -187,6 +138,6 @@
     <SUITE FILE_PATH="coverage/PythonProject1$google_lens.coverage" NAME="google_lens 커버리지 결과" MODIFIED="1748507369001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api/google_lens" />
     <SUITE FILE_PATH="coverage/PythonProject1$CommandManager.coverage" NAME="CommandManager 커버리지 결과" MODIFIED="1747212412835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/command" />
     <SUITE FILE_PATH="coverage/PythonProject1$Card.coverage" NAME="Card 커버리지 결과" MODIFIED="1747212536160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/command/commands" />
-    <SUITE FILE_PATH="coverage/PythonProject1$main.coverage" NAME="main 커버리지 결과" MODIFIED="1748510095980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/PythonProject1$main.coverage" NAME="main 커버리지 결과" MODIFIED="1748517778482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
