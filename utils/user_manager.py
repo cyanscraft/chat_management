@@ -75,19 +75,30 @@ def handle_attendance(user_id: str, name: str):
 
         # 오늘 기준 ts 순 랭킹만 계산
         cursor.execute("""
-            SELECT attend_rank, exp_rank
-            FROM (
-                SELECT
-                  user_id,
-                  RANK() OVER (ORDER BY last_attend_ts ASC)   AS attend_rank,
-                  RANK() OVER (ORDER BY exp DESC)             AS exp_rank
-                FROM user_state
-                WHERE last_attend_date = CURDATE()
-            ) ranked
+            SELECT
+    u.user_id,
+    attend_ranks.attend_rank,
+    exp_ranks.exp_rank
+FROM user_state u
+
+-- 경험치 랭크: 모든 유저에 대해 랭크
+JOIN (
+    SELECT user_id,
+           RANK() OVER (ORDER BY exp DESC) AS exp_rank
+    FROM user_state
+) AS exp_ranks ON u.user_id = exp_ranks.user_id
+
+-- 출석 랭크: 오늘 출석한 유저만 랭크 계산 → 나머지는 NULL
+LEFT JOIN (
+    SELECT user_id,
+           RANK() OVER (ORDER BY last_attend_ts ASC) AS attend_rank
+    FROM user_state
+    WHERE DATE(last_attend_ts) = CURDATE()
+) AS attend_ranks ON u.user_id = attend_ranks.user_id
             WHERE user_id = %s
         """, (user_id,))
         ranks = cursor.fetchone()
-        print(ranks)
+
         cursor.close()
         conn.close()
         return {
@@ -115,33 +126,30 @@ def handle_attendance(user_id: str, name: str):
     elif last_date == today:
         # 이미 출석한 경우, 오늘 랭킹만 다시 조회
         cursor.execute("""
-           SELECT
-                    u.user_id,
-                    attend_ranks.attend_rank,
-                    exp_ranks.exp_rank
-                FROM user_state u
-                
-                -- 경험치 랭크: 모든 유저에 대해 랭크
-                JOIN (
-                    SELECT user_id,
-                           RANK() OVER (ORDER BY exp DESC) AS exp_rank
-                    FROM user_state
-                ) AS exp_ranks ON u.user_id = exp_ranks.user_id
-                
-                -- 출석 랭크: 오늘 출석한 유저만 랭크 계산 → 나머지는 NULL
-                LEFT JOIN (
-                    SELECT user_id,
-                           RANK() OVER (ORDER BY last_attend_ts ASC) AS attend_rank
-                    FROM user_state
-                    WHERE last_attend_date = CURDATE()
-                ) AS attend_ranks ON u.user_id = attend_ranks.user_id
-                
-                WHERE u.user_id = %s
+            SELECT
+    u.user_id,
+    attend_ranks.attend_rank,
+    exp_ranks.exp_rank
+FROM user_state u
+
+-- 경험치 랭크: 모든 유저에 대해 랭크
+JOIN (
+    SELECT user_id,
+           RANK() OVER (ORDER BY exp DESC) AS exp_rank
+    FROM user_state
+) AS exp_ranks ON u.user_id = exp_ranks.user_id
+
+-- 출석 랭크: 오늘 출석한 유저만 랭크 계산 → 나머지는 NULL
+LEFT JOIN (
+    SELECT user_id,
+           RANK() OVER (ORDER BY last_attend_ts ASC) AS attend_rank
+    FROM user_state
+    WHERE DATE(last_attend_ts) = CURDATE()
+) AS attend_ranks ON u.user_id = attend_ranks.user_id
+            WHERE user_id = %s
         """, (user_id,))
         ranks = cursor.fetchone()
-        print(user)
-        print(ranks)
-        print(user_id)
+
         cursor.close()
         conn.close()
         return {
@@ -173,27 +181,26 @@ def handle_attendance(user_id: str, name: str):
     # 5) 오늘 기준 랭킹 재조회
     cursor.execute("""
         SELECT
-                    u.user_id,
-                    attend_ranks.attend_rank,
-                    exp_ranks.exp_rank
-                FROM user_state u
-                
-                -- 경험치 랭크: 모든 유저에 대해 랭크
-                JOIN (
-                    SELECT user_id,
-                           RANK() OVER (ORDER BY exp DESC) AS exp_rank
-                    FROM user_state
-                ) AS exp_ranks ON u.user_id = exp_ranks.user_id
-                
-                -- 출석 랭크: 오늘 출석한 유저만 랭크 계산 → 나머지는 NULL
-                LEFT JOIN (
-                    SELECT user_id,
-                           RANK() OVER (ORDER BY last_attend_ts ASC) AS attend_rank
-                    FROM user_state
-                    WHERE last_attend_date = CURDATE()
-                ) AS attend_ranks ON u.user_id = attend_ranks.user_id
-                
-                WHERE u.user_id = %s
+    u.user_id,
+    attend_ranks.attend_rank,
+    exp_ranks.exp_rank
+FROM user_state u
+
+-- 경험치 랭크: 모든 유저에 대해 랭크
+JOIN (
+    SELECT user_id,
+           RANK() OVER (ORDER BY exp DESC) AS exp_rank
+    FROM user_state
+) AS exp_ranks ON u.user_id = exp_ranks.user_id
+
+-- 출석 랭크: 오늘 출석한 유저만 랭크 계산 → 나머지는 NULL
+LEFT JOIN (
+    SELECT user_id,
+           RANK() OVER (ORDER BY last_attend_ts ASC) AS attend_rank
+    FROM user_state
+    WHERE DATE(last_attend_ts) = CURDATE()
+) AS attend_ranks ON u.user_id = attend_ranks.user_id
+        WHERE user_id = %s
     """, (user_id,))
     ranks = cursor.fetchone()
 
@@ -247,7 +254,7 @@ def get_or_create(user_id: str, name: str):
                     SELECT user_id,
                            RANK() OVER (ORDER BY last_attend_ts ASC) AS attend_rank
                     FROM user_state
-                    WHERE last_attend_date = CURDATE()
+                    WHERE DATE(last_attend_ts) = CURDATE()
                 ) AS attend_ranks ON u.user_id = attend_ranks.user_id
                 
                 WHERE u.user_id = %s
@@ -284,7 +291,7 @@ def get_or_create(user_id: str, name: str):
                 SELECT user_id,
                        RANK() OVER (ORDER BY last_attend_ts ASC) AS attend_rank
                 FROM user_state
-                WHERE last_attend_date = CURDATE()
+                WHERE DATE(last_attend_ts) = CURDATE()
             ) AS attend_ranks ON u.user_id = attend_ranks.user_id
             
             WHERE u.user_id = %s
