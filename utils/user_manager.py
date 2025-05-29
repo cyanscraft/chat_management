@@ -95,7 +95,7 @@ LEFT JOIN (
     FROM user_state
     WHERE DATE(last_attend_ts) = CURDATE()
 ) AS attend_ranks ON u.user_id = attend_ranks.user_id
-            WHERE user_id = %s
+            WHERE u.user_id = %s
         """, (user_id,))
         ranks = cursor.fetchone()
 
@@ -146,7 +146,7 @@ LEFT JOIN (
     FROM user_state
     WHERE DATE(last_attend_ts) = CURDATE()
 ) AS attend_ranks ON u.user_id = attend_ranks.user_id
-            WHERE user_id = %s
+            WHERE u.user_id = %s
         """, (user_id,))
         ranks = cursor.fetchone()
 
@@ -200,7 +200,7 @@ LEFT JOIN (
     FROM user_state
     WHERE DATE(last_attend_ts) = CURDATE()
 ) AS attend_ranks ON u.user_id = attend_ranks.user_id
-        WHERE user_id = %s
+        WHERE u.user_id = %s
     """, (user_id,))
     ranks = cursor.fetchone()
 
