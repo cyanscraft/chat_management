@@ -116,14 +116,14 @@ LEFT JOIN (
 
     # 3) 기존 사용자: 스트릭 계산
     total_attend_count = user["total_attend_count"]
-    last_date   = user["last_attend_date"]
+    last_date   = user["last_attend_ts"]
     stream_count = user.get("stream_attend_count", 0)
 
     if last_date is None:
         stream_count = 1
-    elif last_date == today - timedelta(days=1):
+    elif last_date.date() == (today - timedelta(days=1)):
         stream_count += 1
-    elif last_date == today:
+    elif last_date.date() == today:
         # 이미 출석한 경우, 오늘 랭킹만 다시 조회
         cursor.execute("""
             SELECT
@@ -160,7 +160,8 @@ LEFT JOIN (
             "last_attend_date": last_date,
             "date": today,
             "attend_rank": ranks["attend_rank"],
-            "exp_rank":    ranks["exp_rank"]
+            "exp_rank":    ranks["exp_rank"],
+            "exp": user["exp"]
         }
     else:
         stream_count = 1

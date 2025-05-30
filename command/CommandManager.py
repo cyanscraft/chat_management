@@ -9,11 +9,12 @@ from command.commands.CardCommand import CardCommand
 from command.commands.ChangeBackgroundCommand import ChangeBackgroundCommand
 from command.commands.KermitCommand import KermitCommand
 from command.commands.StatusMsgCommand import StatusMsgCommand
+from command.commands.SummaryCommand import SummaryCommand
 from command.commands.WeatherCommand import WeatherCommand
 from command.commands.WhoisCommand import WhoisCommand
 from command.commands.notification_command import NotificationCommand
-from database import notification
 
+session = {}
 
 class CommandManager:
     def __init__(self):
@@ -27,12 +28,19 @@ class CommandManager:
         self.add_command(WhoisCommand())
         self.add_command(WeatherCommand())
         self.add_command(KermitCommand())
+        self.add_command(SummaryCommand())
 
     def add_command(self, command: ICommand):
         self.exact_commands[command.invoke] = command
         print(f"☀️ 명령어 등록: {command.invoke}")
 
     def handle_command(self, event: ChatContext, kl):
+        session.setdefault(str(event.room.id), {})
+        session[str(event.room.id)]["name"] = event.room.name
+        session[str(event.room.id)]["end_id"] = event.message.id
+        if "start_id" not in session[str(event.room.id)]:
+            session[str(event.room.id)]["start_id"] = event.message.id
+
         print(f"[메세지] {event.sender.name}: {event.message.msg}")
         prefix = "!"
 
@@ -47,8 +55,9 @@ class CommandManager:
         invoke = split[0]
         command = self.exact_commands.get(invoke)
 
-        if event.message.msg == "!테스트":
-            notification.add_notification(str(event.sender.id), "테스트 알림입니다.")
+        if invoke == "요약":
+            command.handle(event, session)
+            return
         if command and command.type == "kl":
             command.handle(event, kl)
         elif command:

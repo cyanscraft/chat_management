@@ -2,7 +2,7 @@ from iris import ChatContext
 from utils.user_manager import handle_attendance
 
 def format_attendance_message(data):
-    return f"""\n  🏅 오늘의 출석 랭킹: {data['attend_rank']}위\n  🔥 연속 출석: {data['stream_count']}일\n  📈 누적 출석: {data['total_attend_count']}회\n"""
+    return f"""\n  🏅 오늘의 출석 랭킹: {data['attend_rank']}위\n  🔥 연속 출석: {data['stream_count']}일\n  📈 누적 출석: {data['total_attend_count']}회\n  🪙exp: {data["exp"]}\n"""
 
 
 class AttendanceCommand:
