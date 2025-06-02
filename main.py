@@ -7,7 +7,7 @@ from command.CommandManager import CommandManager
 from utils.user_manager import update_chat_count
 
 
-bot_url = "http://146.56.160.198:3000"
+bot_url = "http://64.110.81.215:3000"
 bot = Bot(iris_url=bot_url)
 manager = CommandManager()
 

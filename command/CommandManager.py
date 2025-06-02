@@ -7,7 +7,9 @@ from command.commands import ICommand
 from command.commands.AttendanceCommand import AttendanceCommand
 from command.commands.CardCommand import CardCommand
 from command.commands.ChangeBackgroundCommand import ChangeBackgroundCommand
+from command.commands.GeminiCommand import GeminiCommand
 from command.commands.KermitCommand import KermitCommand
+from command.commands.SpotifyCommand import SpotifyCommand
 from command.commands.StatusMsgCommand import StatusMsgCommand
 from command.commands.SummaryCommand import SummaryCommand
 from command.commands.WeatherCommand import WeatherCommand
@@ -29,6 +31,8 @@ class CommandManager:
         self.add_command(WeatherCommand())
         self.add_command(KermitCommand())
         self.add_command(SummaryCommand())
+        self.add_command(SpotifyCommand())
+        self.add_command(GeminiCommand())
 
     def add_command(self, command: ICommand):
         self.exact_commands[command.invoke] = command
@@ -55,7 +59,7 @@ class CommandManager:
         invoke = split[0]
         command = self.exact_commands.get(invoke)
 
-        if invoke == "요약":
+        if invoke == "su":
             command.handle(event, session)
             return
         if command and command.type == "kl":
